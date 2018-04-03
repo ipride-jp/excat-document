@@ -1,1 +1,0 @@
-\\IPRIDE-008\share\SHwithbackup\Excatプロジェクト\Excat開発＆保守プロジェクト\F.インストーラ作成

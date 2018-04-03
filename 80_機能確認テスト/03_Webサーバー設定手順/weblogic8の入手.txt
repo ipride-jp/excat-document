@@ -1,4 +1,0 @@
-weblogic8.1 sp6
-　　http://e-docs.bea.com/platform/suppconfigs/configs81/81_over/overview.html
-　　「Microsoft Windows Server 2003 64bit 」の時 BEA JRockit 1.4.2_10 R26.3.0-32_CR283061
-　　「HP-UX 11　PA-RISC 」の時、　　HP-UX SDK 1.4.2.10

@@ -1,3 +1,0 @@
->cd xvsf
-
->javac -g:none TestCase21_3.java -cp C:\wzhou_app\jboss4\excat_test_context\WEB-INF\classes 
