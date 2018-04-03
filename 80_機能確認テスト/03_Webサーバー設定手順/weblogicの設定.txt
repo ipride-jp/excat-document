@@ -1,0 +1,21 @@
+Window版で説明します。
+
+1.weblogicをインストールする
+　手順、ここで省略する
+2.Excamples　Serverを利用してExcatテストプログラムを配布する
+　{インストールルートフォルダ：例えば、weblogic91}\samples\server\examples\build\examplesWebApp\の下にJspフォルダを置く
+　　　　　excat_test_context\link\*.jsp
+  {インストールルートフォルダ：例えば、weblogic91}\samples\server\examples\build\examplesWebApp\WEB-INF\classes\の下にclassフォルダを置く
+　　　　　　　　excat\test\*.class
+
+3.起動ShellにJVMオプションを追加する
+　Windowsの場合：
+　{インストールルートフォルダ：例えば、weblogic91}\samples\domains\wl_server\bin\startWebLogic.cmd
+  を編集して、下記Excat関連オプションを追加する
+　参照：startWebLogic.cmd.bk　の184、187行目
+
+4.Weblogicサンプルサーバーを起動して、Excatテストを行う。
+　{インストールルートフォルダ：例えば、weblogic91}\samples\domains\wl_server\bin\startWebLogic.cmd
+　を実行して、Weblogicを起動する
+　下記のURLでテストを行う。
+　　http://localhost:7001/examplesWebApp/excat_test_context/link/testlist.jsp

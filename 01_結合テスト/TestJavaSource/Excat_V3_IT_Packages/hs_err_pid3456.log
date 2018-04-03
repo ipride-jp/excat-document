@@ -1,0 +1,152 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x7c94100b, pid=3456, tid=3820
+#
+# JRE version: 6.0_16-b01
+# Java VM: Java HotSpot(TM) Client VM (14.2-b01 mixed mode windows-x86 )
+# Problematic frame:
+# C  [ntdll.dll+0x100b]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00847000):  JavaThread "main" [_thread_in_native, id=3820, stack(0x008e0000,0x00930000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000034
+
+Registers:
+EAX=0x00000020, EBX=0x00000000, ECX=0x7ffdd000, EDX=0x00000020
+ESP=0x0092e8ec, EBP=0x0092e8f4, ESI=0x00000000, EDI=0x0092ebd1
+EIP=0x7c94100b, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x0092e8ec)
+0x0092e8ec:   77beb90d 00000020 0092e928 77bf174f
+0x0092e8fc:   00000000 0092ebd1 00000000 00000000
+0x0092e90c:   0092e8f8 0092e900 0092e510 0092ec9c
+0x0092e91c:   77be5c94 77bc46c0 ffffffff 00000000
+0x0092e92c:   10020509 00bc0048 00000430 00000001
+0x0092e93c:   00000000 0092eb9c 10084d80 00000000
+0x0092e94c:   00844630 0092ed34 0092ed54 00000000
+0x0092e95c:   00000000 00000001 ffffff01 00bbe1c8 
+
+Instructions: (pc=0x7c94100b)
+0x7c940ffb:   00 00 00 00 00 64 8b 0d 18 00 00 00 8b 54 24 04
+0x7c94100b:   83 7a 14 00 75 4f f0 ff 42 04 75 19 8b 41 24 89 
+
+
+Stack: [0x008e0000,0x00930000],  sp=0x0092e8ec,  free space=314k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0x100b]
+C  [msvcrt.dll+0x3174f]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.ClassLoader.defineClass1(Ljava/lang/String;[BIILjava/security/ProtectionDomain;Ljava/lang/String;)Ljava/lang/Class;+0
+j  java.lang.ClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/ProtectionDomain;)Ljava/lang/Class;+34
+j  java.security.SecureClassLoader.defineClass(Ljava/lang/String;[BIILjava/security/CodeSource;)Ljava/lang/Class;+27
+j  java.net.URLClassLoader.defineClass(Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+253
+j  java.net.URLClassLoader.access$000(Ljava/net/URLClassLoader;Ljava/lang/String;Lsun/misc/Resource;)Ljava/lang/Class;+3
+j  java.net.URLClassLoader$1.run()Ljava/lang/Object;+43
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;Ljava/security/AccessControlContext;)Ljava/lang/Object;+0
+j  java.net.URLClassLoader.findClass(Ljava/lang/String;)Ljava/lang/Class;+13
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+43
+j  sun.misc.Launcher$AppClassLoader.loadClass(Ljava/lang/String;Z)Ljava/lang/Class;+41
+j  java.lang.ClassLoader.loadClass(Ljava/lang/String;)Ljava/lang/Class;+3
+j  java.lang.ClassLoader.loadClassInternal(Ljava/lang/String;)Ljava/lang/Class;+2
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0afbcc00 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=1496, stack(0x0b240000,0x0b290000)]
+  0x0afba400 JavaThread "CompilerThread0" daemon [_thread_blocked, id=2612, stack(0x0b1f0000,0x0b240000)]
+  0x0afaf800 JavaThread "Thread-0" daemon [_thread_in_native, id=3432, stack(0x0b1a0000,0x0b1f0000)]
+  0x0af9c800 JavaThread "Attach Listener" daemon [_thread_blocked, id=3368, stack(0x0b150000,0x0b1a0000)]
+  0x0afb9800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3124, stack(0x0b100000,0x0b150000)]
+  0x0af89400 JavaThread "Finalizer" daemon [_thread_blocked, id=2868, stack(0x0b0b0000,0x0b100000)]
+  0x0af84c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=2516, stack(0x0b060000,0x0b0b0000)]
+=>0x00847000 JavaThread "main" [_thread_in_native, id=3820, stack(0x008e0000,0x00930000)]
+
+Other Threads:
+  0x0af80c00 VMThread [stack: 0x0b010000,0x0b060000] [id=3812]
+  0x0afb3000 WatcherThread [stack: 0x0b290000,0x0b2e0000] [id=3468]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 383K [0x02e70000, 0x02f70000, 0x03350000)
+  eden space 896K,  42% used [0x02e70000, 0x02ecff30, 0x02f50000)
+  from space 64K,   0% used [0x02f50000, 0x02f50000, 0x02f60000)
+  to   space 64K,   0% used [0x02f60000, 0x02f60000, 0x02f70000)
+ tenured generation   total 4096K, used 0K [0x03350000, 0x03750000, 0x06e70000)
+   the space 4096K,   0% used [0x03350000, 0x03350000, 0x03350200, 0x03750000)
+ compacting perm gen  total 12288K, used 2117K [0x06e70000, 0x07a70000, 0x0ae70000)
+   the space 12288K,  17% used [0x06e70000, 0x07081530, 0x07081600, 0x07a70000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Program Files\Java\jdk1.6.0_16\bin\javaw.exe
+0x7c940000 - 0x7c9df000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c933000 	C:\WINDOWS\system32\kernel32.dll
+0x77d80000 - 0x77e29000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e30000 - 0x77ec2000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fa0000 - 0x77fb1000 	C:\WINDOWS\system32\Secur32.dll
+0x77cf0000 - 0x77d80000 	C:\WINDOWS\system32\USER32.dll
+0x77ed0000 - 0x77f19000 	C:\WINDOWS\system32\GDI32.dll
+0x762e0000 - 0x762fd000 	C:\WINDOWS\system32\IMM32.DLL
+0x60740000 - 0x60749000 	C:\WINDOWS\system32\LPK.DLL
+0x73f80000 - 0x73feb000 	C:\WINDOWS\system32\USP10.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jdk1.6.0_16\jre\bin\msvcr71.dll
+0x6d8b0000 - 0x6db3b000 	C:\Program Files\Java\jdk1.6.0_16\jre\bin\client\jvm.dll
+0x76af0000 - 0x76b1b000 	C:\WINDOWS\system32\WINMM.dll
+0x6d860000 - 0x6d86c000 	C:\Program Files\Java\jdk1.6.0_16\jre\bin\verify.dll
+0x6d3e0000 - 0x6d3ff000 	C:\Program Files\Java\jdk1.6.0_16\jre\bin\java.dll
+0x6d340000 - 0x6d348000 	C:\Program Files\Java\jdk1.6.0_16\jre\bin\hpi.dll
+0x76ba0000 - 0x76bab000 	C:\WINDOWS\system32\PSAPI.DLL
+0x10000000 - 0x10094000 	C:\Excat\DumpStack\DumpStack.dll
+0x12000000 - 0x12242000 	C:\Excat\DumpStack\xerces-c_2_7.dll
+0x719e0000 - 0x719f7000 	C:\WINDOWS\system32\WS2_32.dll
+0x77bc0000 - 0x77c18000 	C:\WINDOWS\system32\msvcrt.dll
+0x719d0000 - 0x719d8000 	C:\WINDOWS\system32\WS2HELP.dll
+0x00950000 - 0x00957000 	C:\Excat\DumpStack\libLicense.dll
+0x00960000 - 0x00a69000 	C:\Excat\DumpStack\LIBEAY32_0_9_8d.dll
+0x71a00000 - 0x71a0b000 	C:\WINDOWS\system32\WSOCK32.dll
+0x59250000 - 0x592a5000 	C:\WINDOWS\system32\NETAPI32.dll
+0x75fd0000 - 0x76035000 	C:\WINDOWS\system32\MSVCP60.dll
+0x6d8a0000 - 0x6d8af000 	C:\Program Files\Java\jdk1.6.0_16\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -agentlib:DumpStack -Dfile.encoding=MS932 
+java_command: main.Main
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_16
+PATH=C:/Program Files/Java/jdk1.6.0_16/bin/../jre/bin/client;C:/Program Files/Java/jdk1.6.0_16/bin/../jre/bin;C:\oracle\product\10.2.0\oraclient\bin;C:\oracle\product\10.2.0\orahome\bin;C:\Program Files\svn\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\php;C:\Program Files\TortoiseSVN\bin;;C:\Excat\DumpStack;C:\Excat\DumpStack;C:\Program Files\Java\jdk1.6.0_16\bin
+USERNAME=Zheng Jing
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 15 Model 4 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 2 (1 cores per cpu, 2 threads per core) family 15 model 4 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ht
+
+Memory: 4k page, physical 1562692k(489196k free), swap 2969724k(1880548k free)
+
+vm_info: Java HotSpot(TM) Client VM (14.2-b01) for windows-x86 JRE (1.6.0_16-b01), built on Jul 31 2009 11:26:58 by "java_re" with MS VC++ 7.1
+
+time: Wed Oct 07 14:33:30 2009
+elapsed time: 0 seconds
+
